@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom'
-import Add from '../SVG/TabBar/Add'
+
 import ChatInactive from '../SVG/TabBar/ChatInactive'
 import HomeActive from '../SVG/TabBar/HomeActive'
 import ListingInactive from '../SVG/TabBar/ListingInactive'
@@ -8,6 +8,7 @@ import HomeInactive from '../SVG/TabBar/HomeInactive'
 import ListingActive from '../SVG/TabBar/ListingActive'
 import ChatActive from '../SVG/TabBar/ChatActive'
 import SaveActive from '../SVG/TabBar/SaveActive'
+import AddModal from '../AddModal'
 
 const TabBar = () => {
   const location = useLocation()
@@ -25,9 +26,10 @@ const TabBar = () => {
               <ListingInactive />
             )}
           </Link>
-          <Link to="/add" className="my-auto flex">
-            <Add />
-          </Link>
+          {/* <Link to="/add" className="my-auto flex">
+            <AddModal/>
+          </Link> */}
+          <AddModal/>
           <Link to="/chat" className="my-auto flex">
             {location.pathname === '/chat' ? <ChatActive /> : <ChatInactive />}
           </Link>
