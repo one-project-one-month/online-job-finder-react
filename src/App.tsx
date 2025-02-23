@@ -1,9 +1,15 @@
-import { Button } from '@/components/ui/button'
+import Logo from '@/features/auth/Logo'
+import Welcome from '@/features/auth/Welcome'
+import CheckYourEmail from '@/features/auth/CheckYourEmail'
+import ChangedPassword from './features/auth/ChangedPassword'
 
 export default function App() {
   return (
-    <div className="flex min-h-screen w-full items-center justify-center">
-      <Button className="bg-red-600">Online Job Finder</Button>
+    <div>
+      <Logo />
+      <Welcome />
+      <CheckYourEmail />
+      <ChangedPassword />
     </div>
   )
 }
