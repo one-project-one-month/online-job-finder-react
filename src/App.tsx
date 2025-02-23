@@ -1,16 +1,14 @@
-
-import FindJob from './components/FindJob'
+import TabBar from './components/_ui/TabBar'
+import RouterPage from './app/Route'
 import Header from './components/Header'
 
-import JoinNow from './components/JoinNow'
-import Nav from './ui/Nav'
 export default function App() {
   return (
     <div className="flex flex-col min-h-screen w-full items-center pb-16">
       <Header />
-      <JoinNow />
-      <FindJob />
-      <Nav />
+      <RouterPage />
+      <div className="mb-24"></div>
+      <TabBar />
     </div>
   )
 }
