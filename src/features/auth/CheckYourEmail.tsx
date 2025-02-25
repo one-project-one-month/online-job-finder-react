@@ -14,11 +14,11 @@ export default function CheckYourEmail() {
         <img className="w-44 md:w-52" src={checkEmailSvg} alt="" />
       </div>
       <div className="flex flex-col">
-        <Button className="mb-3 bg-[#130160] py-6 text-base uppercase hover:bg-[#130160] md:py-7 md:text-xl">
+        <Button className="mb-3 bg-[#130160] py-6 uppercase hover:bg-[#130160] md:py-7">
           Open your email
         </Button>
         <Button
-          className="bg-[#d6cdfe] py-6 text-base uppercase hover:bg-[#d6cdfe] md:py-7 md:text-xl"
+          className="bg-[#d6cdfe] py-6 uppercase hover:bg-[#d6cdfe] md:py-7"
           variant="default"
         >
           Back to login

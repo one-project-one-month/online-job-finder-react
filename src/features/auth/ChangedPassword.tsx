@@ -13,11 +13,11 @@ export default function ChangedPassword() {
         <img className="w-36 md:w-56" src={verifyEmailSvg} alt="" />
       </div>
       <div className="flex flex-col">
-        <Button className="mb-3 bg-[#130160] py-6 text-base uppercase hover:bg-[#130160] md:py-7 md:text-xl">
+        <Button className="mb-3 bg-[#130160] py-6 uppercase hover:bg-[#130160] md:py-7">
           Continue
         </Button>
         <Button
-          className="bg-[#d6cdfe] py-6 text-base uppercase hover:bg-[#d6cdfe] md:py-7 md:text-xl"
+          className="bg-[#d6cdfe] py-6 uppercase hover:bg-[#d6cdfe] md:py-7"
           variant="default"
         >
           Back to login
