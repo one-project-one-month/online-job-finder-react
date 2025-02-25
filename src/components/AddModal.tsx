@@ -3,8 +3,13 @@ import Add from './SVG/TabBar/Add'
 import { Dialog } from "radix-ui";
 import { Cross2Icon } from "@radix-ui/react-icons";
 import { Button } from './ui/button';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 const AddModal = () => {
+	const navigate = useNavigate(); // Hook for programmatic navigation
+
+  const handleRedirect = (path) => {
+    navigate(path); // Navigate to the specified path
+  };
   return (
     <Dialog.Root>
 		<Dialog.Trigger asChild>
@@ -21,12 +26,26 @@ const AddModal = () => {
 				<Dialog.Description className="text-center mb-5 mt-2.5 text-[15px] leading-normal text-mauve11">
 				Would you like to post your tips and experiences or create a job?
 				</Dialog.Description>
-				<Link to="/post">
-            <Button className='bg-[#130160] w-full mb-2'>POST</Button>
-          </Link>
-          <Link to="/create-job">
-            <Button className='bg-[#D6CDFE] w-full text-black'>MAKE A JOB</Button>
-          </Link>
+				<Dialog.Close asChild>
+				
+            		<Button
+					 className='bg-[#130160] w-full mb-2'
+					 onClick={()=>{
+						handleRedirect('/addPost')
+					 }}>POST
+					 </Button>
+          		
+				</Dialog.Close>
+				
+				<Dialog.Close asChild>
+					<Button 
+					className='bg-[#D6CDFE] w-full text-black '
+					onClick={()=>{
+						handleRedirect('/makeJob')
+					}}>MAKE A JOB</Button>
+				
+				</Dialog.Close>
+				
 			
 				
 				
