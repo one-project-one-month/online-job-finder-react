@@ -40,3 +40,6 @@ lerna-debug.log*
 
 # Local Netlify folder
 .netlify
+
+# custom ignore
+src/App-copy.tsx
