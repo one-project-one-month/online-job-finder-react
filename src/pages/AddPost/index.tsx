@@ -2,9 +2,9 @@ import AddPost from "@/components/AddPost";
 import { IoIosArrowRoundBack } from "react-icons/io";
 import { Link } from "react-router";
 const AddPage = () => {
-  return <div>
+  return <div className="w-full">
     {/* Header */}
-    <div className='flex justify-between items-center w-full'>
+    <div className='relative flex justify-between items-center p-4'>
       <IoIosArrowRoundBack />
       <h1 className="text-orange-400">
         Post

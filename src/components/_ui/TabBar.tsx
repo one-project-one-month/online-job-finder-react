@@ -26,9 +26,6 @@ const TabBar = () => {
               <ListingInactive />
             )}
           </Link>
-          {/* <Link to="/add" className="my-auto flex">
-            <AddModal/>
-          </Link> */}
           <AddModal/>
           <Link to="/chat" className="my-auto flex">
             {location.pathname === '/chat' ? <ChatActive /> : <ChatInactive />}

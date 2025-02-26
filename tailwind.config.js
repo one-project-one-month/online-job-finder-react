@@ -71,8 +71,28 @@ export default {
       },
       to: { opacity: '1', transform: 'translate(-50%, -50%) scale(1)' },
     },
+    slideUp: {
+      '0%': { transform: 'translateY(120%)', opacity: '0' },
+      '100%': { transform: 'translateY(0)', opacity: '1' },
+    },
+    slideDown: {
+      '0%': { transform: 'translateY(0)', opacity: '1' },
+      '100%': { transform: 'translateY(120%)', opacity: '0' },
+    },
+    fadeIn: {
+      '0%': { opacity: 0 },
+      '100%': { opacity: 1 },
+    },
+    fadeOut: {
+      '0%': { opacity: 1 },
+      '100%': { opacity: 0 },
+    },
   },
   animation: {
+    slideUp: 'slideUp 2s ease-out',
+    slideDown: 'slideDown 2s ease-in',
+    fadeIn: 'fadeIn 2s ease-out',
+    fadeOut: 'fadeOut 2s ease-in',
     overlayShow: 'overlayShow 150ms cubic-bezier(0.16, 1, 0.3, 1)',
     contentShow: 'contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1)',
   },
