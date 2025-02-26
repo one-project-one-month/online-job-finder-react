@@ -1,7 +1,9 @@
 import welcomeSvg from '@/assets/images/auth/welcome.svg'
 import nextIconSvg from '@/assets/icons/auth/next.svg'
+import { Link } from 'react-router-dom'
 
 export default function Welcome() {
+  const user = ''
   return (
     <div className="flex min-h-screen flex-col justify-between px-10 py-12 md:px-20 md:py-16">
       <h1 className="text-right text-base font-medium md:text-xl">
@@ -20,9 +22,9 @@ export default function Welcome() {
           Explore all the most exciting job roles based on your interest and
           study major.
         </p>
-        <button className="float-right">
+        <Link to={`/${user ? 'home' : 'auth/signin'}`} className="float-right">
           <img src={nextIconSvg} alt="next icon" />
-        </button>
+        </Link>
       </div>
     </div>
   )

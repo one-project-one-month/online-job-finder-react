@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 interface HaveAccountProps {
   link: string
   label: string
@@ -8,9 +10,9 @@ export default function HaveAccount(props: HaveAccountProps) {
   return (
     <div className="mt-7 text-center text-gray-700">
       You don't have an account yet?{' '}
-      <a href={link} className="text-yellow-600 hover:underline">
+      <Link to={link} className="text-yellow-600 hover:underline">
         {label}
-      </a>
+      </Link>
     </div>
   )
 }
