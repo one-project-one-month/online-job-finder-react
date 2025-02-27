@@ -6,7 +6,7 @@ import LoadingDots from './components/_ui/LoadingDots'
 export default function App() {
   return (
     <div>
-    <Suspense fallback={<div><LoadingDots/></div>}>
+    <Suspense fallback={<LoadingDots/>}>
         <RouterProvider router={router} />
     </Suspense>
     </div>
