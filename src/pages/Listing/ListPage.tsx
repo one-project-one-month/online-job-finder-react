@@ -1,5 +1,9 @@
-const ListingPage = () => {
-  return <div>ListingPage</div>
+import React from 'react'
+
+const ListPage = () => {
+  return (
+    <div>ListPage</div>
+  )
 }
 
-export default ListingPage
+export default ListPage

@@ -1,7 +1,7 @@
 
 import { createBrowserRouter } from 'react-router-dom';
-import adminRoute from './adminRoute';
-import publicRoute from './publicRoute';
+import adminRoute from './admin/adminRoute';
+import publicRoute from './public/publicRoute';
 
 
 const router = createBrowserRouter([
