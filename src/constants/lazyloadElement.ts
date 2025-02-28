@@ -1,7 +1,7 @@
 import { lazy } from 'react';
 
 //public
-export const PublicLayout = lazy(()=> import ('@/components/layouts/public/PublicLayout'))
+export const PublicLayout = lazy(()=> import ('@/components/layouts/PublicLayout'))
 export const HomePage = lazy(() => import('@/pages/Home/HomePage'));
 
 // list 
@@ -13,4 +13,4 @@ export const ChatPage = lazy(() => import('@/pages/Chat/ChatPage'));
 export const AddPage = lazy(() => import ('@/pages/Add/AddPage'))
 
 //admin
-export const AdminLayout = lazy(()=> import('@/components/layouts/admin/AdminLayout'));
+export const AdminLayout = lazy(()=> import('@/components/layouts/AdminLayout'));

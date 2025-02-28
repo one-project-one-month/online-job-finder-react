@@ -1,5 +1,5 @@
 import { Outlet, useMatch } from 'react-router-dom'
-import TabBar from '../../_ui/TabBar'
+import TabBar from '../_ui/TabBar'
 
 const PublicLayout = () => {
   const match = useMatch("/listing/filter"); 
