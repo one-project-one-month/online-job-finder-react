@@ -8,6 +8,7 @@ const Listing = React.lazy(() => import('../pages/Listing/index'))
 const Add = React.lazy(() => import('../pages/Add/index'))
 const Chat = React.lazy(() => import('../pages/Chat/index'))
 const Save = React.lazy(() => import('../pages/Save/index'))
+const Profile = React.lazy(() => import('../pages/Profile/index'))
 
 const Onboarding = React.lazy(() => import('@/pages/Auth/Onboarding'))
 const SplashScreen = React.lazy(() => import('@/pages/Auth/SplashScreen'))
@@ -35,6 +36,7 @@ const RouterPage = () => {
         <Route path="/add" element={<Add />} />
         <Route path="/chat" element={<Chat />} />
         <Route path="/save" element={<Save />} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
 
       <Outlet />
