@@ -29,8 +29,12 @@ export default function App() {
   return (
     <div>
       <RouterPage />
-      <div className="mb-24"></div>
-      {location.pathname !== '/welcome' && user && <TabBar />}
+      {location.pathname !== '/welcome' && user && (
+        <>
+          <div className="mb-24"></div>
+          <TabBar />
+        </>
+      )}
     </div>
   )
 }
