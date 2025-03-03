@@ -1,0 +1,386 @@
+const [open, setOpen] = useState(true)
+  const [selected, setSelected] = useState<string | null>(null)
+  const [selectedWorkPlace, setSelectedWorkPlace] = useState<string | null>(
+    null
+  )
+
+  const [activeButton, setActiveButton] = useState(null)
+
+  const handleButtonClick = (buttonId: string) => {
+    setActiveButton(buttonId as never)
+  }
+
+  const handleRadioChange = (value: string) => {
+    setSelected(value)
+  }
+
+  return (
+    <div>
+      <div className="pl-[20px] pt-[30px]">
+        <BackBtn />
+      </div>
+      <div className="font-dm-sans mt-[10px] flex items-center justify-center text-2xl font-medium leading-normal text-black">
+        Filter
+      </div>
+      <div>
+        <button
+          onClick={() => setOpen(!open)}
+          className="flex w-full items-center justify-between rounded-lg p-5 text-white"
+        >
+          <span className="font-dm-sans text-[14px] font-medium leading-normal text-black">
+            Last update
+          </span>
+          {open ? (
+            <ChevronUp size={16} className="text-black" />
+          ) : (
+            <ChevronDown size={16} className="text-black" />
+          )}
+        </button>
+        {open && (
+          <div className="flex flex-col gap-2">
+            <label className="flex items-center gap-1 px-7">
+              <input
+                type="radio"
+                name="timeframe"
+                value="recent"
+                checked={selected === 'recent'}
+                onChange={() => handleRadioChange('recent')}
+                className="form-radio peer h-4 w-4"
+                style={{
+                  appearance: 'none',
+                  border: '2px solid #524B6B',
+                  borderRadius: '50%',
+                  width: '16px',
+                  height: '16px',
+                  position: 'relative',
+                  backgroundColor:
+                    selected === 'recent' ? '#FCA34D' : 'transparent',
+                }}
+              />
+              <span className="font-dm-sans text-4 text-xs font-normal leading-normal text-[#524B6B]">
+                Recent
+              </span>
+            </label>
+            <label className="flex items-center gap-1 px-7">
+              <input
+                type="radio"
+                name="timeframe"
+                value="lastWeek"
+                checked={selected === 'lastWeek'}
+                onChange={() => handleRadioChange('lastWeek')}
+                className="form-radio peer h-4 w-4"
+                style={{
+                  appearance: 'none',
+                  border: '2px solid #524B6B',
+                  borderRadius: '50%',
+                  width: '16px',
+                  height: '16px',
+                  position: 'relative',
+                  padding: '2px',
+                  backgroundColor:
+                    selected === 'lastWeek' ? '#FCA34D' : 'transparent',
+                }}
+              />
+              <span className="font-dm-sans text-4 text-xs font-normal leading-normal text-[#524B6B]">
+                Last Week
+              </span>
+            </label>
+            <label className="flex items-center gap-1 px-7">
+              <input
+                type="radio"
+                name="timeframe"
+                value="lastMonth"
+                checked={selected === 'lastMonth'}
+                onChange={() => handleRadioChange('lastMonth')}
+                className="form-radio peer h-4 w-4"
+                style={{
+                  appearance: 'none',
+                  border: '2px solid #524B6B',
+                  borderRadius: '50%',
+                  width: '16px',
+                  height: '16px',
+                  position: 'relative',
+                  padding: '2px',
+                  backgroundColor:
+                    selected === 'lastMonth' ? '#FCA34D' : 'transparent',
+                }}
+              />
+              <span className="font-dm-sans text-4 text-xs font-normal leading-normal text-[#524B6B]">
+                Last month
+              </span>
+            </label>
+            <label className="flex items-center gap-1 px-7">
+              <input
+                type="radio"
+                name="timeframe"
+                value="anyTime"
+                checked={selected === 'anyTime'}
+                onChange={() => handleRadioChange('anyTime')}
+                className="form-radio peer h-4 w-4"
+                style={{
+                  appearance: 'none',
+                  border: '2px solid #524B6B',
+                  borderRadius: '50%',
+                  width: '16px',
+                  height: '16px',
+                  position: 'relative',
+                  padding: '2px',
+                  backgroundColor:
+                    selected === 'anyTime' ? '#FCA34D' : 'transparent',
+                }}
+              />
+              <span className="font-dm-sans text-4 text-xs font-normal leading-normal text-[#524B6B]">
+                Any time
+              </span>
+            </label>
+          </div>
+        )}
+      </div>
+      <div>
+        <button
+          onClick={() => setOpen(!open)}
+          className="flex w-full items-center justify-between rounded-lg p-4 text-white"
+        >
+          <span className="font-dm-sans text-[14px] font-medium leading-normal text-black">
+            Type of workplace
+          </span>
+          {open ? (
+            <ChevronUp size={16} className="text-black" />
+          ) : (
+            <ChevronDown size={16} className="text-black" />
+          )}
+        </button>
+        {open && (
+          <div className="flex flex-col gap-2">
+            <label className="flex items-center gap-1 px-7">
+              <input
+                type="radio"
+                name="timeframe"
+                value="onSite"
+                checked={selected === 'onSite'}
+                onChange={() => handleRadioChange('onSite')}
+                className="form-radio peer h-4 w-4"
+                style={{
+                  appearance: 'none',
+                  border: '2px solid #524B6B',
+                  borderRadius: '50%',
+                  width: '16px',
+                  height: '16px',
+                  position: 'relative',
+                  padding: '2px',
+                  backgroundColor:
+                    selected === 'onSite' ? '#FCA34D' : 'transparent',
+                }}
+              />
+              <span className="font-dm-sans text-4 text-xs font-normal leading-normal text-[#524B6B]">
+                On-site
+              </span>
+            </label>
+            <label className="flex items-center gap-1 px-7">
+              <input
+                type="radio"
+                name="timeframe"
+                value="hybrid"
+                checked={selected === 'hybrid'}
+                onChange={() => handleRadioChange('hybrid')}
+                className="form-radio peer h-4 w-4"
+                style={{
+                  appearance: 'none',
+                  border: '2px solid #524B6B',
+                  borderRadius: '50%',
+                  width: '16px',
+                  height: '16px',
+                  position: 'relative',
+                  padding: '2px',
+                  backgroundColor:
+                    selected === 'hybrid' ? '#FCA34D' : 'transparent',
+                }}
+              />
+              <span className="font-dm-sans text-4 text-xs font-normal leading-normal text-[#524B6B]">
+                Hybrid
+              </span>
+            </label>
+            <label className="flex items-center gap-1 px-7">
+              <input
+                type="radio"
+                name="timeframe"
+                value="remote"
+                checked={selected === 'remote'}
+                onChange={() => handleRadioChange('remote')}
+                className="form-radio peer h-4 w-4"
+                style={{
+                  appearance: 'none',
+                  border: '2px solid #524B6B',
+                  borderRadius: '50%',
+                  width: '16px',
+                  height: '16px',
+                  position: 'relative',
+                  padding: '2px',
+                  backgroundColor:
+                    selected === 'remote' ? '#FCA34D' : 'transparent',
+                }}
+              />
+              <span className="font-dm-sans text-4 text-xs font-normal leading-normal text-[#524B6B]">
+                Remote
+              </span>
+            </label>
+          </div>
+        )}
+      </div>
+      <div>
+        <button
+          onClick={() => setOpen(!open)}
+          className="flex w-full items-center justify-between rounded-lg p-4 text-white"
+        >
+          <span className="font-dm-sans text-[14px] font-medium leading-normal text-black">
+            Job type
+          </span>
+          {open ? (
+            <ChevronUp size={16} className="text-black" />
+          ) : (
+            <ChevronDown size={16} className="text-black" />
+          )}
+        </button>
+        {open && (
+          <div className="flex gap-2">
+            <button
+              onClick={() => handleButtonClick('Apprenticeship')}
+              className={`font-dm-sans rounded-md px-7 py-2 text-xs font-normal leading-normal text-white ${
+                activeButton === 'Apprenticeship'
+                  ? 'bg-[#FCA34D]'
+                  : 'bg-[#524B6B]'
+              }`}
+              style={{
+                transition: 'background-color 0.3s ease',
+              }}
+            >
+              Apprenticeship
+            </button>
+
+            <button
+              onClick={() => handleButtonClick('Part-time')}
+              className={`font-dm-sans rounded-md px-7 py-2 text-xs font-normal leading-normal text-white ${
+                activeButton === 'Part-time' ? 'bg-[#FCA34D]' : 'bg-[#524B6B]'
+              }`}
+              style={{
+                transition: 'background-color 0.3s ease',
+              }}
+            >
+              Part-time
+            </button>
+
+            <button
+              onClick={() => handleButtonClick('Full-time')}
+              className={`font-dm-sans rounded-md px-7 py-2 text-xs font-normal leading-normal text-white ${
+                activeButton === 'Full-time' ? 'bg-[#FCA34D]' : 'bg-[#524B6B]'
+              }`}
+              style={{
+                transition: 'background-color 0.3s ease',
+              }}
+            >
+              Full-time
+            </button>
+            <button
+              onClick={() => handleButtonClick('Contarct')}
+              className={`font-dm-sans rounded-md px-7 py-2 text-xs font-normal leading-normal text-white ${
+                activeButton === 'Contarct' ? 'bg-[#FCA34D]' : 'bg-[#524B6B]'
+              }`}
+              style={{
+                transition: 'background-color 0.3s ease',
+              }}
+            >
+              Contarct
+            </button>
+            <button
+              onClick={() => handleButtonClick('Project-based')}
+              className={`font-dm-sans rounded-md px-7 py-2 text-xs font-normal leading-normal text-white ${
+                activeButton === 'Project-based'
+                  ? 'bg-[#FCA34D]'
+                  : 'bg-[#524B6B]'
+              }`}
+              style={{
+                transition: 'background-color 0.3s ease',
+              }}
+            >
+              Project-based
+            </button>
+          </div>
+        )}
+      </div>
+      <div>
+        <button
+          onClick={() => setOpen(!open)}
+          className="flex w-full items-center justify-between rounded-lg p-4 text-white"
+        >
+          <span className="font-dm-sans text-[14px] font-medium leading-normal text-black">
+            Position level
+          </span>
+          {open ? (
+            <ChevronUp size={16} className="text-black" />
+          ) : (
+            <ChevronDown size={16} className="text-black" />
+          )}
+        </button>
+      </div>
+      <div>
+        <button
+          onClick={() => setOpen(!open)}
+          className="flex w-full items-center justify-between rounded-lg p-4 text-white"
+        >
+          <span className="font-dm-sans text-[14px] font-medium leading-normal text-black">
+            City
+          </span>
+          {open ? (
+            <ChevronUp size={16} className="text-black" />
+          ) : (
+            <ChevronDown size={16} className="text-black" />
+          )}
+        </button>
+      </div>
+      <div>
+        <button
+          onClick={() => setOpen(!open)}
+          className="flex w-full items-center justify-between rounded-lg p-4 text-white"
+        >
+          <span className="font-dm-sans text-[14px] font-medium leading-normal text-black">
+            Salary
+          </span>
+          {open ? (
+            <ChevronUp size={16} className="text-black" />
+          ) : (
+            <ChevronDown size={16} className="text-black" />
+          )}
+        </button>
+      </div>
+      <div>
+        <button
+          onClick={() => setOpen(!open)}
+          className="flex w-full items-center justify-between rounded-lg p-4 text-white"
+        >
+          <span className="font-dm-sans text-[14px] font-medium leading-normal text-black">
+            Experience
+          </span>
+          {open ? (
+            <ChevronUp size={16} className="text-black" />
+          ) : (
+            <ChevronDown size={16} className="text-black" />
+          )}
+        </button>
+      </div>
+      <div>
+        <button
+          onClick={() => setOpen(!open)}
+          className="flex w-full items-center justify-between rounded-lg p-4 text-white"
+        >
+          <span className="font-dm-sans text-[14px] font-medium leading-normal text-black">
+            Specialization
+          </span>
+          {open ? (
+            <ChevronUp size={16} className="text-black" />
+          ) : (
+            <ChevronDown size={16} className="text-black" />
+          )}
+        </button>
+      </div>
+    </div>
+  )
