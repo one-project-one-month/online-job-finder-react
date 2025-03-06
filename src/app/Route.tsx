@@ -21,6 +21,10 @@ const ChangedPasswd = React.lazy(() => import('@/pages/Auth/ChangedPasswd'))
 const ProfileScreen = React.lazy(() => import('@/pages/account/ProfileScreen'))
 const SettingScreen = React.lazy(() => import('@/pages/account/SettingScreen'))
 const UpdatePasswd = React.lazy(() => import('@/pages/account/UpdatePasswd'))
+const UploadCvForm = React.lazy(() => import('@/pages/applicant/UploadCV'))
+const CvSuccessful = React.lazy(
+  () => import('@/pages/applicant/UploadCvSuccess')
+)
 
 const RouterPage = () => {
   return (
@@ -45,6 +49,8 @@ const RouterPage = () => {
         <Route path="/me/account" element={<ProfileScreen />} />
         <Route path="/setting" element={<SettingScreen />} />
         <Route path="/setting/update-password" element={<UpdatePasswd />} />
+        <Route path="/applicant" element={<UploadCvForm />} />
+        <Route path="/applicant/cv" element={<CvSuccessful />} />
       </Routes>
 
       <Outlet />
