@@ -9,6 +9,8 @@ const Add = React.lazy(() => import('../pages/Add/index'))
 const Chat = React.lazy(() => import('../pages/Chat/index'))
 const Save = React.lazy(() => import('../pages/Save/index'))
 const Profile = React.lazy(() => import('../pages/Profile/index'))
+const JobDetails= React.lazy(()=>import('../pages/JobDetails/index'))
+
 
 const RouterPage = () => {
   return (
@@ -20,6 +22,7 @@ const RouterPage = () => {
         <Route path="/chat" element={<Chat />} />
         <Route path="/save" element={<Save />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/jobDetails/:id" element={<JobDetails/>} />
       </Routes>
 
       <Outlet />
