@@ -18,6 +18,10 @@ const ForgotPasswd = React.lazy(() => import('@/pages/Auth/ForgotPasswd'))
 const EmailVerify = React.lazy(() => import('@/pages/Auth/EmailVerify'))
 const ChangedPasswd = React.lazy(() => import('@/pages/Auth/ChangedPasswd'))
 
+const ProfileScreen = React.lazy(() => import('@/pages/account/ProfileScreen'))
+const SettingScreen = React.lazy(() => import('@/pages/account/SettingScreen'))
+const UpdatePasswd = React.lazy(() => import('@/pages/account/UpdatePasswd'))
+
 const RouterPage = () => {
   return (
     <React.Suspense fallback={<LoadingDots />}>
@@ -37,6 +41,10 @@ const RouterPage = () => {
         <Route path="/chat" element={<Chat />} />
         <Route path="/save" element={<Save />} />
         <Route path="/profile" element={<Profile />} />
+
+        <Route path="/me/account" element={<ProfileScreen />} />
+        <Route path="/setting" element={<SettingScreen />} />
+        <Route path="/setting/update-password" element={<UpdatePasswd />} />
       </Routes>
 
       <Outlet />
