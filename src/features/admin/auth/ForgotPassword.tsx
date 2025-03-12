@@ -1,8 +1,8 @@
 import { useState } from 'react'
-import AuthHead from '@/features/auth/AuthHead'
+import AuthHead from '@/features/admin/auth/AuthHead'
 import forgotPasswordSvg from '@/assets/images/auth/forgotPassword.svg'
 import { Button } from '@/components/ui/button'
-import FormInput from '@/features/auth/FormInput'
+import FormInput from '@/features/admin/auth/FormInput'
 
 export default function ForgotPassword() {
   const [emailVal, setEmailVal] = useState('')

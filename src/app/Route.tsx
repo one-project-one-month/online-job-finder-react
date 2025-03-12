@@ -10,16 +10,47 @@ const Chat = React.lazy(() => import('../pages/Chat/index'))
 const Save = React.lazy(() => import('../pages/Save/index'))
 const Profile = React.lazy(() => import('../pages/Profile/index'))
 
+const Onboarding = React.lazy(() => import('@/pages/Auth/Onboarding'))
+const SplashScreen = React.lazy(() => import('@/pages/Auth/SplashScreen'))
+const Signin = React.lazy(() => import('@/pages/Auth/Signin'))
+const Signup = React.lazy(() => import('@/pages/Auth/Signup'))
+const ForgotPasswd = React.lazy(() => import('@/pages/Auth/ForgotPasswd'))
+const EmailVerify = React.lazy(() => import('@/pages/Auth/EmailVerify'))
+const ChangedPasswd = React.lazy(() => import('@/pages/Auth/ChangedPasswd'))
+
+const ProfileScreen = React.lazy(() => import('@/pages/account/ProfileScreen'))
+const SettingScreen = React.lazy(() => import('@/pages/account/SettingScreen'))
+const UpdatePasswd = React.lazy(() => import('@/pages/account/UpdatePasswd'))
+const UploadCvForm = React.lazy(() => import('@/pages/Add/applicant/UploadCV'))
+const CvSuccessful = React.lazy(
+  () => import('@/pages/Add/applicant/UploadCvSuccess')
+)
+
 const RouterPage = () => {
   return (
     <React.Suspense fallback={<LoadingDots />}>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" index element={<Onboarding />} />
+        <Route path="/welcome" element={<SplashScreen />} />
+        <Route path="/auth/signin" element={<Signin />} />
+        <Route path="/auth/signup" element={<Signup />} />
+        <Route path="/forgot-password" element={<ForgotPasswd />} />
+        <Route path="/email-verify" element={<EmailVerify />} />
+        <Route path="/change-password" element={<ChangedPasswd />} />
+
+        {/* changed home route from '/' to '/home' */}
+        <Route path="/home" element={<Home />} />
         <Route path="/listing" element={<Listing />} />
         <Route path="/add" element={<Add />} />
         <Route path="/chat" element={<Chat />} />
         <Route path="/save" element={<Save />} />
         <Route path="/profile" element={<Profile />} />
+
+        <Route path="/me/account" element={<ProfileScreen />} />
+        <Route path="/setting" element={<SettingScreen />} />
+        <Route path="/setting/update-password" element={<UpdatePasswd />} />
+        <Route path="/applicant" element={<UploadCvForm />} />
+        <Route path="/applicant/cv" element={<CvSuccessful />} />
       </Routes>
 
       <Outlet />
