@@ -21,9 +21,9 @@ const ChangedPasswd = React.lazy(() => import('@/pages/Auth/ChangedPasswd'))
 const ProfileScreen = React.lazy(() => import('@/pages/account/ProfileScreen'))
 const SettingScreen = React.lazy(() => import('@/pages/account/SettingScreen'))
 const UpdatePasswd = React.lazy(() => import('@/pages/account/UpdatePasswd'))
-const UploadCvForm = React.lazy(() => import('@/pages/applicant/UploadCV'))
+const UploadCvForm = React.lazy(() => import('@/pages/Add/applicant/UploadCV'))
 const CvSuccessful = React.lazy(
-  () => import('@/pages/applicant/UploadCvSuccess')
+  () => import('@/pages/Add/applicant/UploadCvSuccess')
 )
 
 const RouterPage = () => {
