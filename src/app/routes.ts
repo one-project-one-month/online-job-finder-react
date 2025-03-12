@@ -6,4 +6,5 @@ export default [
   route('add', './add.tsx'),
   route('chat', './chat.tsx'),
   route('save', './save.tsx'),
+  route('jobDetails/:id','./jobDetails.tsx')
 ] satisfies RouteConfig

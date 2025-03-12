@@ -8,7 +8,7 @@ const Listing = React.lazy(() => import('../pages/Listing/index'))
 const Add = React.lazy(() => import('../pages/AddPost/index'))
 const Chat = React.lazy(() => import('../pages/Chat/index'))
 const Save = React.lazy(() => import('../pages/Save/index'))
-const MakeJob= React.lazy(()=>import('../pages/MakeJob/index'))
+const MakeJob = React.lazy(() => import('../pages/MakeJob/index'))
 const Profile = React.lazy(() => import('../pages/Profile/index'))
 
 const Onboarding = React.lazy(() => import('@/pages/Auth/Onboarding'))
@@ -26,6 +26,8 @@ const UploadCvForm = React.lazy(() => import('@/pages/Add/applicant/UploadCV'))
 const CvSuccessful = React.lazy(
   () => import('@/pages/Add/applicant/UploadCvSuccess')
 )
+
+const JobDetails = React.lazy(() => import('../pages/JobDetails/index'))
 
 const RouterPage = () => {
   return (
@@ -45,7 +47,7 @@ const RouterPage = () => {
         <Route path="/addPost" element={<Add />} />
         <Route path="/chat" element={<Chat />} />
         <Route path="/save" element={<Save />} />
-        <Route path='/makeJob' element={<MakeJob/>}/>
+        <Route path="/makeJob" element={<MakeJob />} />
         <Route path="/profile" element={<Profile />} />
 
         <Route path="/me/account" element={<ProfileScreen />} />
@@ -53,6 +55,8 @@ const RouterPage = () => {
         <Route path="/setting/update-password" element={<UpdatePasswd />} />
         <Route path="/applicant" element={<UploadCvForm />} />
         <Route path="/applicant/cv" element={<CvSuccessful />} />
+
+        <Route path="/jobDetails/:id" element={<JobDetails />} />
       </Routes>
 
       <Outlet />
