@@ -4,10 +4,10 @@ import { Routes, Route } from 'react-router-dom'
 import { Outlet } from 'react-router-dom'
 
 const Home = React.lazy(() => import('../pages/Home/index'))
-const Listing = React.lazy(() => import('../pages/Listing/index'))
+const Listing = React.lazy(() => import('../pages/Listing/ListPage'))
 const Add = React.lazy(() => import('../pages/AddPost/index'))
-const Chat = React.lazy(() => import('../pages/Chat/index'))
-const Save = React.lazy(() => import('../pages/Save/index'))
+const Chat = React.lazy(() => import('../pages/Chat/ChatPage'))
+const Save = React.lazy(() => import('../pages/Save/SavePage'))
 const MakeJob = React.lazy(() => import('../pages/MakeJob/index'))
 const Profile = React.lazy(() => import('../pages/Profile/index'))
 

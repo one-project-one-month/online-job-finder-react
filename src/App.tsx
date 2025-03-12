@@ -20,14 +20,14 @@ export default function App() {
       }, 3000)
       return () => clearTimeout(timer)
     }
-  }, [])
+  }, [location.pathname, navigate])
 
   if (showOnboarding) {
     return <Onboarding />
   }
 
   return (
-    <div>
+    <div className="flex min-h-screen w-full flex-col items-center pb-16">
       <RouterPage />
       {location.pathname !== '/welcome' && user && (
         <>
