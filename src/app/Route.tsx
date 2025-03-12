@@ -5,9 +5,10 @@ import { Outlet } from 'react-router-dom'
 
 const Home = React.lazy(() => import('../pages/Home/index'))
 const Listing = React.lazy(() => import('../pages/Listing/index'))
-const Add = React.lazy(() => import('../pages/Add/index'))
+const Add = React.lazy(() => import('../pages/AddPost/index'))
 const Chat = React.lazy(() => import('../pages/Chat/index'))
 const Save = React.lazy(() => import('../pages/Save/index'))
+const MakeJob= React.lazy(()=>import('../pages/MakeJob/index'))
 const Profile = React.lazy(() => import('../pages/Profile/index'))
 
 const Onboarding = React.lazy(() => import('@/pages/Auth/Onboarding'))
@@ -41,9 +42,10 @@ const RouterPage = () => {
         {/* changed home route from '/' to '/home' */}
         <Route path="/home" element={<Home />} />
         <Route path="/listing" element={<Listing />} />
-        <Route path="/add" element={<Add />} />
+        <Route path="/addPost" element={<Add />} />
         <Route path="/chat" element={<Chat />} />
         <Route path="/save" element={<Save />} />
+        <Route path='/makeJob' element={<MakeJob/>}/>
         <Route path="/profile" element={<Profile />} />
 
         <Route path="/me/account" element={<ProfileScreen />} />

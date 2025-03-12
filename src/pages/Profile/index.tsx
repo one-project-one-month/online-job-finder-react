@@ -3,7 +3,7 @@ import ProfileSection from './components/ProfileSection'
 
 const ProfilePage = () => {
   return (
-    <div>
+    <div className='w-full'>
       <Card />
       <ProfileSection />
     </div>
